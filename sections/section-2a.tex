@@ -1,0 +1,37 @@
+\section{Les points de Lagrange}
+Le but de cette partie est de trouver le point d'équilibre d'un objet sachant qu'il est soumis à plusieurs forces différentes.
+
+\subsection{Modélisation de différentes forces}
+Il a donc fallu dans un premier écrire des algorithmes qui vont permettre de calculer la force appliquer à un point en fonction de ses
+coordonées cartésiennes. Les différentes forces qui ont été choisies sont : la force élastique, la force centrifuge, et la force gravitationnelle.
+Les calculs qui suivent ont demandés aussi de calculer leur Jacobienne et de les implémenter en Python. Ce travail de modélisation a donc demandé plus
+de travail de calcul que de travail algorithmique.
+
+
+Les forces sont représentées sous les formes suivantes :
+
+\begin{equation*}
+    f_e : \left[\begin{array}{cccccc}
+        x \\
+        y \\
+      \end{array} \right]
+      \rightarrow
+      \left[\begin{array}{cccccc}
+        k(x-x0) \\
+        k(y-y0) \\
+      \end{array} \right]
+\end{equation*}
+\begin{equation*}
+    f_g : \left[\begin{array}{cccccc}
+        x \\
+        y \\
+      \end{array} \right]
+      \rightarrow
+      \left[\begin{array}{cccccc}
+        -k\cdot \frac{x-x0}{((x-x0)^2+(y-y0)^2)^{\frac{3}{2}}} \\
+        -k\cdot \frac{y-y0}{((x-x0)^2+(y-y0)^2)^{\frac{3}{2}}} \\
+      \end{array} \right]
+\end{equation*}
+
+\subsection{Recherche de points d'équilibre}
+Dans un premier nous avons recherché les points d'équilibres 
